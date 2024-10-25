@@ -22,7 +22,7 @@ def append_to_file(filename, text_to_append):
 # Example usage:
 os.chdir("C:\\xampp\\htdocs\\me_user\\birthday")
 cmd("ls")
-append_to_file("README.md", "  ")
+append_to_file("bd.md", "  ")
 
 cmd("git add .")
 cmd("git commit -m 'commit'")
